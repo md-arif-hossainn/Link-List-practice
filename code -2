@@ -1,0 +1,68 @@
+#include<iostream>
+#include <cmath>
+using namespace std;
+
+struct node
+{
+    int data;
+    node* next;
+};
+
+node* head;
+int count = 0;
+
+node* Insert(node* head, int x)
+{
+    node* temp = new node();
+    temp->data = x;
+    temp->next = head;
+    head = temp;
+
+    return head;
+}
+
+void Calculate(node* head)
+{
+    int sum = 0;
+    while(head != NULL)
+    {
+        cout << "sum" << sum << endl;
+        cout << "data" << head->data << endl;
+        cout << "next" << pow(2, count) << endl;
+        sum = sum + head->data * pow(2, count);
+        head = head->next;
+        count++;
+    }
+    cout << "Total value" << sum << "\n";
+}
+
+void Print(node* head)
+{
+    cout << "LIST IS: ";
+    while(head != NULL)
+    {
+        cout << head->data << " ";
+        head = head->next;
+    }
+    cout << "\n";
+}
+
+int main()
+{
+    head = NULL;
+    cout << "How many data want to input \n";
+    int n, i, x;
+
+    cin >> n;
+    for(i = 0; i < n; i++)
+    {
+        cout << "Enter the number: \n";
+        cin >> x;
+        head = Insert(head, x);
+        Print(head);
+    }
+
+    Calculate(head);
+
+    return 0;
+}
