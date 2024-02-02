@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-
+//It  is print just reverse order not using fully functionality
 struct node{
  int data;
  node* next;
