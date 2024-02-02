@@ -25,8 +25,8 @@ node* Insert(node* head, int data)
 void Print(node* p)
 {
     if(p==NULL) return;
-    Print(p->next);//recursion
-    cout<<p->data<<" ";
+    Print(p->next);//recursion 
+    cout<<p->data<<" "; //If I use this line first its print normal way.
 
 
 }
